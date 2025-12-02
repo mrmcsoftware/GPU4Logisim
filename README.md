@@ -562,7 +562,8 @@ Walsh's **Holy Cross** version of Logisim Evolution.
 
 ## Demonstration Videos
 
-Youtube video (also showing my CPU design) coming soon
+Youtube video (also showing my CPU design):
+[Very Fast and Versatile GPU Component for my Logisim CPU / Computer (Blits, Sprites, Polygons, etc.)](https://www.youtube.com/watch?v=CsjMJFTHkPo)
 
 ## Possible Improvements
 
