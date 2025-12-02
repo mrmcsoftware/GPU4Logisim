@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.5-HC" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val="text"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="#BFH-Praktika" name="7"/>
+  <lib desc="jar#GPUhc2.jar#com.mcsoftware.logisim.mygpulib.MyGPUlib" name="8"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+    <a name="simsmooth" val="50"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Poke Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Wiring Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val="text"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <comp lib="0" loc="(350,310)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(50,380)" name="Constant">
+      <a name="value" val="0x1"/>
+    </comp>
+    <comp lib="0" loc="(50,420)" name="Clock"/>
+    <comp lib="4" loc="(100,370)" name="Counter">
+      <a name="max" val="0x2c8"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="4" loc="(140,470)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="contents">addr/data: 16 32
+compressed
+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&#13;
+7vjjgT8e+OMdf7xn/fkP7XlVqw==</a>
+      <a name="dataWidth" val="32"/>
+    </comp>
+    <comp lib="4" loc="(450,470)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="contents">addr/data: 16 2
+702*3
+</a>
+      <a name="dataWidth" val="2"/>
+    </comp>
+    <comp lib="5" loc="(50,490)" name="Button">
+      <a name="label" val="Reset"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="6" loc="(248,646)" name="Text">
+      <a name="font" val="SansSerif bold 16"/>
+      <a name="text" val="GPU Data In"/>
+    </comp>
+    <comp lib="6" loc="(566,646)" name="Text">
+      <a name="font" val="SansSerif bold 16"/>
+      <a name="text" val="GPU Select"/>
+    </comp>
+    <comp lib="6" loc="(577,100)" name="Text">
+      <a name="font" val="SansSerif bold 24"/>
+      <a name="text" val="with the file 'gpu4dram'."/>
+    </comp>
+    <comp lib="6" loc="(577,126)" name="Text">
+      <a name="font" val="SansSerif bold 24"/>
+      <a name="text" val="Right click on the GPU video screen."/>
+    </comp>
+    <comp lib="6" loc="(577,74)" name="Text">
+      <a name="font" val="SansSerif bold 24"/>
+      <a name="text" val="Don't forget to load the GPU's RAM"/>
+    </comp>
+    <comp lib="8" loc="(330,160)" name="GPU:LCD Video 256x256x24">
+      <a name="romfile" val="gpu4drom"/>
+    </comp>
+    <wire from="(100,370)" to="(110,370)"/>
+    <wire from="(110,290)" to="(110,300)"/>
+    <wire from="(110,300)" to="(150,300)"/>
+    <wire from="(110,370)" to="(110,480)"/>
+    <wire from="(110,370)" to="(430,370)"/>
+    <wire from="(110,480)" to="(140,480)"/>
+    <wire from="(130,310)" to="(130,490)"/>
+    <wire from="(150,300)" to="(150,420)"/>
+    <wire from="(330,250)" to="(530,250)"/>
+    <wire from="(330,260)" to="(400,260)"/>
+    <wire from="(330,270)" to="(350,270)"/>
+    <wire from="(350,270)" to="(350,310)"/>
+    <wire from="(380,530)" to="(400,530)"/>
+    <wire from="(400,260)" to="(400,530)"/>
+    <wire from="(430,370)" to="(430,480)"/>
+    <wire from="(430,480)" to="(450,480)"/>
+    <wire from="(50,380)" to="(60,380)"/>
+    <wire from="(50,420)" to="(80,420)"/>
+    <wire from="(50,490)" to="(90,490)"/>
+    <wire from="(530,250)" to="(530,440)"/>
+    <wire from="(530,440)" to="(710,440)"/>
+    <wire from="(60,330)" to="(60,380)"/>
+    <wire from="(60,330)" to="(80,330)"/>
+    <wire from="(60,380)" to="(70,380)"/>
+    <wire from="(690,530)" to="(710,530)"/>
+    <wire from="(710,440)" to="(710,530)"/>
+    <wire from="(80,330)" to="(80,350)"/>
+    <wire from="(80,390)" to="(80,420)"/>
+    <wire from="(80,420)" to="(150,420)"/>
+    <wire from="(90,290)" to="(90,310)"/>
+    <wire from="(90,310)" to="(130,310)"/>
+    <wire from="(90,390)" to="(90,490)"/>
+    <wire from="(90,490)" to="(130,490)"/>
+  </circuit>
+</project>

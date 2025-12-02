@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val="Don''t forget to load the GPU's memory.  Right click on the GPU video screen."/>
+      <a name="font" val="SansSerif plain 16"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="jar#GPU.jar#com.mcsoftware.logisim.mygpulib.MyGPUlib" name="7"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Poke Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Wiring Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val="Don''t forget to load the GPU's memory.  Right click on the GPU video screen."/>
+      <a name="font" val="SansSerif plain 16"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(50,420)" to="(80,420)"/>
+    <wire from="(350,270)" to="(350,310)"/>
+    <wire from="(310,480)" to="(320,480)"/>
+    <wire from="(330,260)" to="(420,260)"/>
+    <wire from="(60,380)" to="(70,380)"/>
+    <wire from="(80,330)" to="(80,350)"/>
+    <wire from="(110,370)" to="(310,370)"/>
+    <wire from="(110,370)" to="(110,480)"/>
+    <wire from="(330,270)" to="(350,270)"/>
+    <wire from="(90,490)" to="(130,490)"/>
+    <wire from="(420,260)" to="(420,390)"/>
+    <wire from="(90,310)" to="(130,310)"/>
+    <wire from="(60,330)" to="(80,330)"/>
+    <wire from="(130,310)" to="(130,490)"/>
+    <wire from="(480,250)" to="(480,480)"/>
+    <wire from="(330,250)" to="(480,250)"/>
+    <wire from="(60,330)" to="(60,380)"/>
+    <wire from="(90,290)" to="(90,310)"/>
+    <wire from="(110,290)" to="(110,300)"/>
+    <wire from="(280,480)" to="(290,480)"/>
+    <wire from="(110,300)" to="(150,300)"/>
+    <wire from="(310,370)" to="(310,480)"/>
+    <wire from="(80,420)" to="(150,420)"/>
+    <wire from="(100,370)" to="(110,370)"/>
+    <wire from="(80,390)" to="(80,420)"/>
+    <wire from="(110,480)" to="(140,480)"/>
+    <wire from="(50,490)" to="(90,490)"/>
+    <wire from="(290,390)" to="(290,480)"/>
+    <wire from="(90,390)" to="(90,490)"/>
+    <wire from="(150,300)" to="(150,420)"/>
+    <wire from="(50,380)" to="(60,380)"/>
+    <wire from="(290,390)" to="(420,390)"/>
+    <wire from="(460,480)" to="(480,480)"/>
+    <comp lib="6" loc="(204,557)" name="Text">
+      <a name="text" val="GPU Data In"/>
+      <a name="font" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(350,310)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="4" loc="(280,480)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 16 32
+100ff00 800000 2000000 1ff0000 2001020 100ffff 800001 8002060
+8012070 8022080 800010 2000000 1ffff00 82002d 50010a0 60040a0
+70070a0 9542070 1ffef00 11009070 9682770 1ffdf00 11009170 9692e70
+1ffcf00 11009270 9733570 1ffbf00 11009370 9694370 1ffaf00 11009470
+9734a70 1ff9f00 11009570 9615870 1ff8f00 11009670 9746670 1ff7f00
+11009770 9656d70 1ff6f00 11009870 9737470 1ff5f00 11009970 9747b70
+1ffffff 300a1a2 400b4a2 400b4aa 400a1aa 400a1a2 ff001 700
+ff002 f00 ff003 f12 ff004 712 ff000 4
+600a09d 835828 14000001 14000203 14000003 14000102 820032 f009000
+1000b000 820033 d0040b0 1ff0000 83582c 1600c23c 1ffffff 1500c23c
+100ff00 83582e 1600b23c 1ffffff 1500b23c 10000ff 835830 1600b23c
+1ffffff 1500b23c 1ffff00 835832 1600b23c 1ffffff 1500b23c 1ff00ff
+835834 1600b23c 1ffffff 1500b23c 100ffff 835836 1600b23c 1ffffff
+1500b23c 1ff8f00 835838 1600b23c 1ffffff 1500b23c 83583a 10000df
+18003808 1ffff00 19000002 17003808 19000102 800000 2003800 19000202
+800000 2004f00 19000101 83583a 1700b870 19000201 17006274 19000001
+1ffffff 83583b 20000000 83584f 1f000001 83584c 8036892 1f000000
+800011 80020f4 80002b a000001 825827 a000002 b01ffff b01fdfd
+b01fbfb b01f9f9 b01f7f7 b01f5f5 b01f3f3 b01f1f1 b01efef b01eded
+b01ebeb b01e9e9 b01e7e7 b01e5e5 b01e3e3 b01e1e1 b01dfdf b01dddd
+b01dbdb b01d9d9 b01d7d7 b01d5d5 b01d3d3 b01d1d1 b01cfcf b01cdcd
+b01cbcb b01c9c9 b01c7c7 b01c5c5 b01c3c3 b01c1c1 b01bfbf b01bdbd
+b01bbbb b01b9b9 b01b7b7 b01b5b5 b01b3b3 b01b1b1 b01afaf b01adad
+b01abab b01a9a9 b01a7a7 b01a5a5 b01a3a3 b01a1a1 b019f9f b019d9d
+b019b9b b019999 b019797 b019595 b019393 b019191 b018f8f b018d8d
+b018b8b b018989 b018787 b018585 b018383 b018181 b017f7f b017d7d
+b017b7b b017979 b017777 b017575 b017373 b017171 b016f6f b016d6d
+b016b6b b016969 b016767 b016565 b016363 b016161 b015f5f b015d5d
+b015b5b b015959 b015757 b015555 b015353 b015151 b014f4f b014d4d
+b014b4b b014949 b014747 b014545 b014343 b014141 b013f3f b013d3d
+b013b3b b013939 b013737 b013535 b013333 b013131 b012f2f b012d2d
+b012b2b b012929 b012727 b012525 b012323 b012121 b011f1f b011d1d
+b011b1b b011919 b011717 b011515 b011313 b011111 b010f0f b010d0d
+b010b0b b010909 b010707 b010505 b010303 b010101 b010000 800011
+800050b 835853 c000003 d03fefe d03fdfd d03fcfc d03fbfb d03fafa
+d03f9f9 d03f8f8 d03f7f7 d03f6f6 d03f5f5 d03f4f4 d03f3f3 d03f2f2
+d03f1f1 d03f0f0 d03efef d03eeee d03eded d03ecec d03ebeb d03eaea
+d03e9e9 d03e8e8 d03e7e7 d03e6e6 d03e5e5 d03e4e4 d03e3e3 d03e2e2
+d03e1e1 d03e0e0 d03dfdf d03dede d03dddd d03dcdc d03dbdb d03dada
+d03d9d9 d03d8d8 d03d7d7 d03d6d6 d03d5d5 d03d4d4 d03d3d3 d03d2d2
+d03d1d1 d03d0d0 d03cfcf d03cece d03cdcd d03cccc d03cbcb d03caca
+d03c9c9 d03c8c8 d03c7c7 d03c6c6 d03c5c5 d03c4c4 d03c3c3 d03c2c2
+d03c1c1 d03c0c0 d03bfbf d03bebe d03bdbd d03bcbc d03bbbb d03baba
+d03b9b9 d03b8b8 d03b7b7 d03b6b6 d03b5b5 d03b4b4 d03b3b3 d03b2b2
+d03b1b1 d03b0b0 d03afaf d03aeae d03adad d03acac d03abab d03aaaa
+d03a9a9 d03a8a8 d03a7a7 d03a6a6 d03a5a5 d03a4a4 d03a3a3 d03a2a2
+d03a1a1 d03a0a0 d039f9f d039e9e d039d9d d039c9c d039b9b d039a9a
+d039999 d039898 d039797 d039696 d039595 d039494 d039393 d039292
+d039191 d039090 d038f8f d038e8e d038d8d d038c8c d038b8b d038a8a
+d038989 d038888 d038787 d038686 d038585 d038484 d038383 d038282
+d038181 d038080 d037f7f d037e7e d037d7d d037c7c d037b7b d037a7a
+d037979 d037878 d037777 d037676 d037575 d037474 d037373 d037272
+d037171 d037070 d036f6f d036e6e d036d6d d036c6c d036b6b d036a6a
+d036969 d036868 d036767 d036666 d036565 d036464 d036363 d036262
+d036161 d036060 d035f5f d035e5e d035d5d d035c5c d035b5b d035a5a
+d035959 d035858 d035757 d035656 d035555 d035454 d035353 d035252
+d035151 d035050 d034f4f d034e4e d034d4d d034c4c d034b4b d034a4a
+d034949 d034848 d034747 d034646 d034545 d034444 d034343 d034242
+d034141 d034040 d033f3f d033e3e d033d3d d033c3c d033b3b d033a3a
+d033939 d033838 d033737 d033636 d033535 d033434 d033333 d033232
+d033131 d033030 d032f2f d032e2e d032d2d d032c2c d032b2b d032a2a
+d032929 d032828 d032727 d032626 d032525 d032424 d032323 d032222
+d032121 d032020 d031f1f d031e1e d031d1d d031c1c d031b1b d031a1a
+d031919 d031818 d031717 d031616 d031515 d031414 d031313 d031212
+d031111 d031010 d030f0f d030e0e d030d0d d030c0c d030b0b d030a0a
+d030909 d030808 d030707 d030606 d030505 d030404 d030303 7*d030202
+d03ffff 1c7f1f0f 820032 f009020 1000b020 1d020101 f009020 1000b020
+1c000000 b020000 b020202 b020404 b020606 b020808 b020a0a b020c0c
+b020e0e b021010 b021212 b021414 b021616 b021818 b021a1a b021c1c
+b021e1e b022020 b022222 b022424 b022626 b022828 b022a2a b022c2c
+b022e2e b023030 b023232 b023434 b023636 b023838 b023a3a b023c3c
+b023e3e b024040 b024242 b024444 b024646 b024848 b024a4a b024c4c
+b024e4e b025050 b025252 b025454 b025656 b025858 b025a5a b025c5c
+b025e5e b026060 b026262 b026464 b026666 b026868 b026a6a b026c6c
+b026e6e b027070 b027272 b027474 b027676 b027878 b027a7a b027c7c
+b027e7e b028080 b028282 b028484 b028686 b028888 b028a8a b028c8c
+b028e8e b029090 b029292 b029494 b029696 b029898 b029a9a b029c9c
+b029e9e b02a0a0 b02a2a2 b02a4a4 b02a6a6 b02a8a8 b02aaaa b02acac
+b02aeae b02b0b0 b02b2b2 b02b4b4 b02b6b6 b02b8b8 b02baba b02bcbc
+b02bebe b02c0c0 b02c2c2 b02c4c4 b02c6c6 b02c8c8 b02caca b02cccc
+b02cece b02d0d0 b02d2d2 b02d4d4 b02d6d6 b02d8d8 b02dada b02dcdc
+b02dede b02e0e0 b02e2e2 b02e4e4 b02e6e6 b02e8e8 b02eaea b02ecec
+b02eeee b02f0f0 b02f2f2 b02f4f4 b02f6f6 b02f8f8 b02fafa b02fcfc
+b02fefe 1d020000 b020000 820f70 c000002 820033 c000001 1e010202
+d02ffff d0100ff d02fdfd d0102fd d02fbfb d0104fb d02f9f9 d0106f9
+d02f7f7 d0108f7 d02f5f5 d010af5 d02f3f3 d010cf3 d02f1f1 d010ef1
+d02efef d0110ef d02eded d0112ed d02ebeb d0114eb d02e9e9 d0116e9
+d02e7e7 d0118e7 d02e5e5 d011ae5 d02e3e3 d011ce3 d02e1e1 d011ee1
+d02dfdf d0120df d02dddd d0122dd d02dbdb d0124db d02d9d9 d0126d9
+d02d7d7 d0128d7 d02d5d5 d012ad5 d02d3d3 d012cd3 d02d1d1 d012ed1
+d02cfcf d0130cf d02cdcd d0132cd d02cbcb d0134cb d02c9c9 d0136c9
+d02c7c7 d0138c7 d02c5c5 d013ac5 d02c3c3 d013cc3 d02c1c1 d013ec1
+d02bfbf d0140bf d02bdbd d0142bd d02bbbb d0144bb d02b9b9 d0146b9
+d02b7b7 d0148b7 d02b5b5 d014ab5 d02b3b3 d014cb3 d02b1b1 d014eb1
+d02afaf d0150af d02adad d0152ad d02abab d0154ab d02a9a9 d0156a9
+d02a7a7 d0158a7 d02a5a5 d015aa5 d02a3a3 d015ca3 d02a1a1 d015ea1
+d029f9f d01609f d029d9d d01629d d029b9b d01649b d029999 d016699
+d029797 d016897 d029595 d016a95 d029393 d016c93 d029191 d016e91
+d028f8f d01708f d028d8d d01728d d028b8b d01748b d028989 d017689
+d028787 d017887 d028585 d017a85 d028383 d017c83 d028181 d017e81
+81002c b000000 d027f7f d01807f d027d7d d01827d d027b7b d01847b
+d027979 d018679 d027777 d018877 d027575 d018a75 d027373 d018c73
+d027171 d018e71 d026f6f d01906f d026d6d d01926d d026b6b d01946b
+d026969 d019669 d026767 d019867 d026565 d019a65 d026363 d019c63
+d026161 d019e61 d025f5f d01a05f d025d5d d01a25d d025b5b d01a45b
+d025959 d01a659 d025757 d01a857 d025555 d01aa55 d025353 d01ac53
+d025151 d01ae51 d024f4f d01b04f d024d4d d01b24d d024b4b d01b44b
+d024949 d01b649 d024747 d01b847 d024545 d01ba45 d024343 d01bc43
+d024141 d01be41 d023f3f d01c03f d023d3d d01c23d d023b3b d01c43b
+d023939 d01c639 d023737 d01c837 d023535 d01ca35 d023333 d01cc33
+d023131 d01ce31 d022f2f d01d02f d022d2d d01d22d d022b2b d01d42b
+d022929 d01d629 d022727 d01d827 d022525 d01da25 d022323 d01dc23
+d022121 d01de21 d021f1f d01e01f d021d1d d01e21d d021b1b d01e41b
+d021919 d01e619 d021717 d01e817 d021515 d01ea15 d021313 d01ec13
+d021111 d01ee11 d020f0f d01f00f d020d0d d01f20d d020b0b d01f40b
+d020909 d01f609 d020707 d01f807 d020505 d01fa05 d020303 d01fc03
+d020101 d01fe01 e000000 d01ffff e000001
+</a>
+    </comp>
+    <comp lib="6" loc="(384,557)" name="Text">
+      <a name="text" val="GPU Select"/>
+      <a name="font" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(50,380)" name="Constant"/>
+    <comp lib="5" loc="(50,490)" name="Button">
+      <a name="label" val="Reset"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="4" loc="(100,370)" name="Counter">
+      <a name="width" val="16"/>
+      <a name="max" val="0x3b8"/>
+    </comp>
+    <comp lib="4" loc="(460,480)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="2"/>
+      <a name="contents">addr/data: 16 2
+3 1 4*3 1 3 3 3 1
+3 3 1 40*3 1 2 1 2
+1 2 1 2 1 2 3 1
+4*3 1 3 3 1 3 3 1
+4*3 1 4*3 1 4*3 1 4*3 1
+4*3 1 4*3 1 3 3 3 1
+6*3 1 3 3 1 3 3 1
+5*3 1 3 1 3 1 3 3
+1 3 1 3 1 130*3 1 3
+1 262*3 1 136*3 1 3 1 130*3
+1 132*3
+</a>
+    </comp>
+    <comp lib="7" loc="(330,160)" name="GPU:LCD Video 256x256x24">
+      <a name="debug" val="On"/>
+      <a name="romfile" val="gpu"/>
+    </comp>
+    <comp lib="0" loc="(50,420)" name="Clock"/>
+  </circuit>
+</project>
