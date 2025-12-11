@@ -15,7 +15,7 @@ BIN_DIR = .\bin
 GPU2.7.1: classes2.7.1
 	jar cmf $(MANIFEST_FILE) GPU.jar -C $(BIN_DIR) . src README.md Makefile Makefile.unix MANIFEST.MF doc resources
 
-all: GPU2.7.1 GPU3.9.0 GPU5.0.4HC GPU4.0.4HC GPU3.3.1HC GPU4.0.0HC GPU5.0.5HC gpuelem
+all: GPU2.7.1 GPU3.9.0 GPU5.0.4HC GPU4.0.4HC GPU3.3.1HC GPU4.0.0HC GPU5.0.5HC gpuelem gpuelem.jar
 
 # GPU3.9.0 also works with Logisim Evolution 4.0.0
 
@@ -62,3 +62,7 @@ classes3.3.1hc:
 
 gpuelem:
 	cl gpuelem.c
+
+gpuelem.jar:
+	javac -encoding "ISO-8859-1" -nowarn gpuelem.java
+	jar cfe gpuelem.jar gpuelem gpuelem.class

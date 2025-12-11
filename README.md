@@ -46,6 +46,11 @@ run, it will output to the file "<b>outhex</b>".  You should then append the con
 of outhex to your image file.  The number of memory elements that are used is
 contained in a comment.  Use that value to help determine the memory address to
 use to access any subsequent graphical elements that you may choose to append.
+A Java version of gpuelem is also provided in case you don't have a C compiler.
+To run it do the following:
+
+    java -jar gpuelem.jar
+
 >**Tip**: If you want to convert a PNG image file to a sprite with a full alpha channel,
 >you can use **pngtopnm** from the Netpbm package with the **-alpha** option to create
 >a PGM file containing the alpha channel (and also use without the **-alpha** option
