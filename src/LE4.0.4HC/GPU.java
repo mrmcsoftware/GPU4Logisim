@@ -214,6 +214,27 @@ class GPU extends ManagedComponent implements ToolTipMaker
 	Value val(CircuitState s, int pin) { return s.getValue(loc(pin)); }
 	int addr(CircuitState s, int pin) { return val(s, pin).toIntValue(); }
 
+	private void fullGpuReset(Graphics2D g)
+	{
+	int i;
+	g.setColor(Color.BLACK);
+	g.fillRect(0, 0, 256, 256);
+	sprites=false; for (i=0;i<NUM_SPRITES;i++) { spron[i]=false; spralx[i]=spraly[i]=0; sprx[i]=spry[i]=0; sprw[i]=sprh[i]=0; }
+	for (i=0;i<NUM_BLITS;i++) { blitalx[i]=blitaly[i]=0; blitw[i]=blith[i]=0; }
+	stroke=new BasicStroke(1f);
+	gradient=null;
+	gpuXOR=false;
+	gpuAddr=0;
+	gpuCurX=gpuCurY=0;
+	db=false;
+	dbuff=null;
+	gpuColorVal=0xffffff;
+	gpuColor=new Color(0xffffff);
+	// Arrays.fill(gpuRAM,0);
+	// Arrays.fill(gpuROM,0);
+	// for (i=0;i<NUM_USERFONTS;i++) sfu[i]=null;
+	}
+
 	public void propagate(CircuitState circuitState)
 	{
 	State state = getState(circuitState);
@@ -227,6 +248,13 @@ class GPU extends ManagedComponent implements ToolTipMaker
 	int gpusel = addr(circuitState, P_GPU_SEL);
 	Value clk=val(circuitState, P_CLK);
 	int i;
+
+	if (state.needsReset)
+		{
+		Graphics g=state.img.getGraphics();
+		fullGpuReset((Graphics2D)g);
+		state.needsReset=false;
+		}
 
 	Object reset_option = attrs.getValue(RESET_OPTION);
 	if (reset_option == null) reset_option = RESET_OPTIONS[0];
@@ -244,6 +272,8 @@ class GPU extends ManagedComponent implements ToolTipMaker
 		//state.img.setRGB(x,y,color);
 		if (RESET_SYNC.equals(reset_option) && val(circuitState, P_RST) == Value.TRUE)
 			{
+			// Not sure how much should be reset
+			//fullGpuReset((Graphics2D)g);
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, 256, 256);
 			sprites=false; for (i=0;i<NUM_SPRITES;i++) { spron[i]=false; spralx[i]=spraly[i]=0; }
@@ -255,6 +285,7 @@ class GPU extends ManagedComponent implements ToolTipMaker
 
 	if (!RESET_SYNC.equals(reset_option) && val(circuitState, P_RST) == Value.TRUE)
 		{
+		// Not sure how much should be reset
 		Graphics g = state.img.getGraphics();
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 256, 256);
@@ -908,10 +939,17 @@ font: StyleSize Fontname(ends with 0)
 		public Value lastGPUClock = null;
 		public BufferedImage img;
 		public int last_x, last_y, color;
+		public boolean needsReset = true;
 
 		State(BufferedImage img)
 		{
 		this.img = img;
+		}
+
+		//@Override
+		public void reset()
+		{
+		needsReset = true;
 		}
 
 		public Object clone() { try { return super.clone(); } catch(CloneNotSupportedException e) { return null; } }
